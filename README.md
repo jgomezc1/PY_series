@@ -4,23 +4,25 @@ This _repo_ contains a variety of subroutines for the analysis of time series ty
 ground motion displacement, velocity and accelaration. Subroutines useful in the computation of Fourier Amplitude Spectra (FAS), 
 Response Spectra (RS)and Transfer Functions (TF) are provided.
 
-The _repo_ contains 3 main folders:
+The _repo_ contains 4 main folders:
 
-1. `DATOS/` The signals to be processed must be stored in this folder.
+1. `data/` The signals to be processed must be stored in this folder.
 
-2. `FUENTE/` Stores the actual subroutines.
+2. `examples/` A variety of notebooks with example problems.
 
-3. `RESULTADOS/` Stores the output.
+3. `pyseries/` Our source code.
+
+4. `results/` Generated pics and txt files are stored here.
 
 ## Authors
-- [Juan David Gómez Cataño](http://www.eafit.edu.co/docentes-investigadores/Paginas/juan-gomez.aspx),
+- [Juan Gomez](http://www.eafit.edu.co/docentes-investigadores/Paginas/juan-gomez.aspx),
     Professor at Universidad EAFIT.
     
 ## Instructions
-The code is written in Python and it depends on `numpy`, `scipy` and `sympy`.
+The code is written in Python 2.7 and it depends on `numpy`, `scipy` and `sympy`.
 To use it clone the repo with
 
-    git clone https://github.com/jgomezc1/SIGNALS.git
+    git clone https://github.com/jgomezc1/PY_series.git
    
 uncompress the zip folder an run the main file in the Python console of your
 preference.
