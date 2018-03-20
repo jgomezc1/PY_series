@@ -1,5 +1,7 @@
 # Processing of time series
 
+![Gilroy acceleration record.](./results/gilroy.png)
+
 This _repo_ contains a variety of subroutines for the analysis of time series typically found in civil engineering such
 ground motion displacement, velocity and accelaration. Subroutines useful in the computation of Fourier Amplitude Spectra (FAS), 
 Response Spectra (RS)and Transfer Functions (TF) are provided.
