@@ -51,7 +51,7 @@ def Ftrans(datos, ndats, dt, fs):
     Sa = Aa[1:nfr]
     Samag = smooth(Sa , x , fs) 
     nfs = nfr-1
-    return x , Samag , A , nfs
+    return x , Samag, A , nfs
 
 def smooth(Sa, Freq, fftfs):
     """
