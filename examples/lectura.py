@@ -470,7 +470,24 @@ def grafmany(signals , nt , nr , ifig):
 #        grafFourier(Samag , x , nfs , 'FAS', 0.0 , 0.0 , 0.0 , 0.0 , ifig)
 #        ifig =ifig + 1
 
-
+def plot_txt_waves(filename , dt):
+#
+    path = '../data/'     
+    DATOS=np.loadtxt(path + filename +'.txt' )
+    nt = len(DATOS)
+    Y = np.arange(0,nt*dt,dt) 
+    XH = DATOS[:,0]
+    XV = DATOS[:,1]
+    
+    plt.plot(Y , XH,)
+    plt.grid()
+    plt.figure(0)
+    
+    plt.plot(Y , XV)
+    plt.grid()
+    plt.figure(1)
+    
+    return 
 
 
 
