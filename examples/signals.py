@@ -489,30 +489,30 @@ def respesp(acel1, nt, dt, tmax, nper):
         Ta[i]=dper*i
     sa=np.zeros(nper)
     for i in range(nper):
-		w=2.*np.pi/(i+1)/dper
-		wd=w*np.sqrt(1.-si**2)
+        w=2.*np.pi/(i+1)/dper
+        wd=w*np.sqrt(1.-si**2)
 	
-		xt0=0.
-		vt0=0.
-		sd0=0.
+        xt0=0.
+        vt0=0.
+        sd0=0.
 	
-		for j in range(nt-1):
-			a0=acel[j]
-			pa=(acel[j+1]-acel[j])/dt
-			d=-pa/w**2
-			cc=(-a0+2.*si*pa/w)/w**2
-			g1=xt0-cc
-			g2=(vt0+si*w*g1+pa/w**2)/wd
-			xt0=np.exp(-si*w*dt)*(g1*np.cos(wd*dt)+g2*np.sin(wd*dt))+cc+d*dt
+        for j in range(nt-1):
+            a0=acel[j]
+            pa=(acel[j+1]-acel[j])/dt
+            d=-pa/w**2
+            cc=(-a0+2.*si*pa/w)/w**2
+            g1=xt0-cc
+            g2=(vt0+si*w*g1+pa/w**2)/wd
+            xt0=np.exp(-si*w*dt)*(g1*np.cos(wd*dt)+g2*np.sin(wd*dt))+cc+d*dt
 		
-			vt0=np.exp(-si*w*dt)*(-g1*wd*np.sin(wd*dt)+g2*wd*np.cos(wd*dt))
-			vt0=vt0-si*w*np.exp(-si*w*dt)*(g1*np.cos(wd*dt)+g2*np.sin(wd*dt))
-			vt0=vt0+d
+            vt0=np.exp(-si*w*dt)*(-g1*wd*np.sin(wd*dt)+g2*wd*np.cos(wd*dt))
+            vt0=vt0-si*w*np.exp(-si*w*dt)*(g1*np.cos(wd*dt)+g2*np.sin(wd*dt))
+            vt0=vt0+d
 
-			if (sd0<np.abs(xt0)):
-				sd0=np.abs(xt0)
+            if (sd0<np.abs(xt0)):
+                sd0=np.abs(xt0)
 			
-		sa[i]=sd0*w**2
+        sa[i]=sd0*w**2
     return sa , Ta
 
 #

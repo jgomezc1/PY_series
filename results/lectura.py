@@ -174,8 +174,8 @@ def grafFourier(Sas , x , nfr , var, xmin , xmax , ymin , ymax , Nfig):
     plt.grid()  
     plt.xlabel('Frecuencia (Hz)')
     plt.ylabel('Amplitud')
-    #plt.legend(['Fourier spectral amplitude'])
-#    plt.xlim(xmin,xmax); plt.ylim(ymin,ymax)
+    plt.legend(['Fourier spectral amplitude'])
+    plt.xlim(xmin,xmax); plt.ylim(ymin,ymax)
 #    plt.xscale('log')
 #    plt.yscale('log')
     plt.savefig(var1)
@@ -469,30 +469,59 @@ def grafmany(signals , nt , nr , ifig):
 #        x, Samag , A , nfs = rdc.Ftrans(signals[:, jj] , nt , 0.01 , 10.0)
 #        grafFourier(Samag , x , nfs , 'FAS', 0.0 , 0.0 , 0.0 , 0.0 , ifig)
 #        ifig =ifig + 1
-    return
 
 def plot_txt_waves(filename , dt):
 #
-    path = '../data/'
-    print('CHIMBA')
+    path = '../data/'     
     DATOS=np.loadtxt(path + filename +'.txt' )
     nt = len(DATOS)
     Y = np.arange(0,nt*dt,dt) 
-   
-    plt.plot(Y , DATOS[:,0])
+    XH = DATOS[:,0]
+    XV = DATOS[:,1]
+    
+    plt.plot(Y , XH,)
     plt.grid()
     plt.figure(0)
     
-    plt.plot(Y , DATOS[:,1])
+    plt.plot(Y , XV)
     plt.grid()
     plt.figure(1)
     
-    
-    return Y , DATOS[:,0] , DATOS[:,1]
+    return Y , XH , XV
 
-def test():
-    
-    variable = 123
-    
-    return variable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

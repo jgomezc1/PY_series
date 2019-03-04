@@ -469,59 +469,30 @@ def grafmany(signals , nt , nr , ifig):
 #        x, Samag , A , nfs = rdc.Ftrans(signals[:, jj] , nt , 0.01 , 10.0)
 #        grafFourier(Samag , x , nfs , 'FAS', 0.0 , 0.0 , 0.0 , 0.0 , ifig)
 #        ifig =ifig + 1
+    return
 
 def plot_txt_waves(filename , dt):
 #
-    path = '../data/'     
+    path = '../data/'
+    print('CHIMBA')
     DATOS=np.loadtxt(path + filename +'.txt' )
     nt = len(DATOS)
     Y = np.arange(0,nt*dt,dt) 
-    XH = DATOS[:,0]
-    XV = DATOS[:,1]
-    
-    plt.plot(Y , XH,)
+   
+    plt.plot(Y , DATOS[:,0])
     plt.grid()
     plt.figure(0)
     
-    plt.plot(Y , XV)
+    plt.plot(Y , DATOS[:,1])
     plt.grid()
     plt.figure(1)
     
-    return 
+    
+    return Y , DATOS[:,0] , DATOS[:,1]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def test():
+    
+    variable = 123
+    
+    return variable
 
